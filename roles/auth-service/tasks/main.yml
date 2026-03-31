@@ -16,8 +16,7 @@
   args:
     chdir: /app
   environment:
-    GOPATH: /root/go
-    GOMODCACHE: /root/go/pkg/mod
+    HOME: /app
     PATH: "/usr/local/go/bin:/root/go/bin:{{ ansible_env.PATH }}"
 
 - name: Include systemd
