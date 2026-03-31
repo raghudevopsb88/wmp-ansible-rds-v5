@@ -15,6 +15,10 @@
     bash -c "CGO_ENABLED=0 go build -o auth-service ./cmd/server"
   args:
     chdir: /app
+  environment:
+    GOPATH: /root/go
+    GOMODCACHE: /root/go/pkg/mod
+    PATH: "/usr/local/go/bin:/root/go/bin:{{ ansible_env.PATH }}"
 
 - name: Include systemd
   ansible.builtin.include_role:
