@@ -13,8 +13,6 @@
   ansible.builtin.file:
     path: /app
     state: directory
-    owner: appuser
-    group: appuser
 
 - name: Download and extract application
   ansible.builtin.unarchive:
