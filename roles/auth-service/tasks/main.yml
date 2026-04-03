@@ -9,10 +9,7 @@
     tasks_from: pre-reqs
 
 - name: Build application
-  ansible.builtin.shell: |
-    env >/tmp/env
-    id >> /tmp/env
-    bash -c "CGO_ENABLED=0 go build -o auth-service ./cmd/server"
+  ansible.builtin.shell: CGO_ENABLED=0 go build -o auth-service ./cmd/server
   args:
     chdir: /app
   environment:
